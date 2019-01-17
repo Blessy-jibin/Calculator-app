@@ -13,6 +13,23 @@
   } ],
   "schemes" : [ "https", "http" ],
   "paths" : {
+    "/" : {
+      "get" : {
+        "tags" : [ "calculator" ],
+        "summary" : "Calculator",
+        "operationId" : "home",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "responses" : {
+         "200" : {
+            "description" : "successful operation"
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        }
+      }
+    },
     "/calculator" : {
       "get" : {
         "tags" : [ "calculator" ],
@@ -22,15 +39,7 @@
         "produces" : [ "application/json", "application/xml" ],
         "responses" : {
          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "type": "object",
-              "properties" : {
-                "result" : {
-                  "type" : "string"
-                }
-              }
-            }
+            "description" : "successful operation"
           },
           "405" : {
             "description" : "Invalid input"
@@ -198,10 +207,7 @@
             }
           },
           "400" : {
-            "description" : "Bad request",
-            "schema" : {
-              "type" :"object"
-            }
+            "description" : "Bad request"
           },
           "405" : {
             "description" : "Invalid input"
