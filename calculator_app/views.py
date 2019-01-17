@@ -4,8 +4,8 @@ from .calculator import Calculator
 
 @view_config(request_method='GET', route_name='home', renderer='json')
 def home(request):
-	""""""
-	return { "result": "Calculator is up" }
+	"""Returns a string as result."""
+	return { "result": "Calculator is up and running" }
 
 
 @view_config(request_method='GET', route_name='add', renderer='json')
