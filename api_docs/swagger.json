@@ -1,0 +1,213 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "This is a sample calculator app whcih supports addition,substraction,division and multiplication",
+    "version" : "1.0.0",
+    "title" : "Calculator"
+  },
+  "host" : "localhost:6543",
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "calculator",
+    "description" : "Calculator"
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/calculator" : {
+      "get" : {
+        "tags" : [ "calculator" ],
+        "summary" : "Calculator",
+        "operationId" : "Calculator",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "responses" : {
+         "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type": "object",
+              "properties" : {
+                "result" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        }
+      }
+    },
+    "/calculator/add" : {
+      "get" : {
+        "tags" : [ "calculator" ],
+        "summary" : "Addition operation",
+        "operationId" : "Addition",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+            "name" : "operand1",
+            "in" : "query",
+            "description" : "First operand",
+            "required" : true,
+            "type": "string"
+          } ,
+           {"name" : "operand2",
+            "in" : "query",
+            "description" : "Second operand",
+            "required" : true,
+            "type": "string"
+          } 
+        ],
+        "responses" : {
+         "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type": "object",
+              "properties" : {
+                "result" : {
+                  "type" : "number"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        }
+      }
+    },
+
+    "/calculator/substract" : {
+      "get" : {
+        "tags" : [ "calculator" ],
+        "summary" : "Substraction operation",
+        "operationId" : "Substraction",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+            "name" : "operand1",
+            "in" : "query",
+            "description" : "First operand",
+            "required" : true,
+            "type": "string"
+          } ,
+           {"name" : "operand2",
+            "in" : "query",
+            "description" : "Second operand",
+            "required" : true,
+            "type": "string"
+          } 
+        ],
+        "responses" : {
+         "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type": "object",
+              "properties" : {
+                "result" : {
+                  "type" : "number"
+                }
+              }
+            }
+          },
+           "400" : {
+            "description" : "Bad request"
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        }
+      }
+    },
+
+    "/calculator/multiply" : {
+      "get" : {
+        "tags" : [ "calculator" ],
+        "summary" : "Multiplication operation",
+        "operationId" : "Multiplication",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+            "name" : "operand1",
+            "in" : "query",
+            "description" : "First operand",
+            "required" : true,
+            "type": "string"
+          } ,
+           {"name" : "operand2",
+            "in" : "query",
+            "description" : "Second operand",
+            "required" : true,
+            "type": "string"
+          } 
+        ],
+        "responses" : {
+         "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type": "object",
+              "properties" : {
+                "result" : {
+                  "type" : "number"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request"
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        }
+      }
+    },
+
+    "/calculator/divide" : {
+      "get" : {
+        "tags" : [ "calculator" ],
+        "summary" : "Division operation",
+        "operationId" : "Division",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+            "name" : "operand1",
+            "in" : "query",
+            "description" : "First operand",
+            "required" : true,
+            "type": "string"
+          } ,
+           {"name" : "operand2",
+            "in" : "query",
+            "description" : "Second operand",
+            "required" : true,
+            "type": "string"
+          } 
+        ],
+        "responses" : {
+         "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type": "object",
+              "properties" : {
+                "result" : {
+                  "type" : "number"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "schema" : {
+              "type" :"object"
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        }
+      }
+    }
+  }
+}
