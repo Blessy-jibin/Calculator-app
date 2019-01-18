@@ -5,9 +5,8 @@ from pyramid.httpexceptions import exception_response
 
 @view_config(route_name='home')
 @view_config(route_name='calculator')
-
 def home(request):
-	"""Returns a string as result."""
+	"""Returns response with staus code 200"""
 	raise exception_response(200, explanation="Calculator is up and running")
 
 
